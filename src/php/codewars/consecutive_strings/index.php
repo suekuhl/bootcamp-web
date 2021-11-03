@@ -22,7 +22,7 @@
 //
 //n being the length of the string array, if n = 0 or k > n or k <= 0 return "".
 
-function longestConsec($strarr, $k)
+function longestConsec(array $strarr, int $k) : string
 {
 
     $concatWords = [];
