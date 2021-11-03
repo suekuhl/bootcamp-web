@@ -1,8 +1,8 @@
 <?php
 
 
-function around($x, $max) {
-//$max = $x; // why does this not work instead of passing in a second variable?
+function around($x) {
+    $max = $x;
     $string = builder($x, $max);
     $rows = explode('-', $string);
     $tree = array_reverse($rows);
@@ -26,7 +26,7 @@ function builder($x, $max) {
         return $stars;
     }
 }
-var_dump(around(4, 4));
+var_dump(around(4));
 
 
 /**
