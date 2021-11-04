@@ -1,31 +1,29 @@
 <?php
 
 
-function around($x) {
+function around($x)
+{
     $max = $x;
     $string = builder($x, $max);
     $rows = explode('-', $string);
     $tree = array_reverse($rows);
     return $tree;
-
 }
 
-function builder($x, $max) {
+function builder($x, $max)
+{
 
     if ($x === 1) {
         //$tree[] = '*';
         //return "*";
         $stars .= str_repeat(' ', ($max - $x)) . '*' . str_repeat(' ', ($max - $x));;
         return $stars;
-
-    } else {
-
-        $stars = str_repeat(' ', ($max - $x)) . str_repeat('*',(2 * $x) - 1) . str_repeat(' ', ($max - $x));
-        $stars .= '-'.builder($x - 1, $max);
-
-        return $stars;
     }
+    $stars = str_repeat(' ', ($max - $x)) . str_repeat('*', (2 * $x) - 1) . str_repeat(' ', ($max - $x));
+    $stars .= '-' . builder($x - 1, $max);
+    return $stars;
 }
+
 var_dump(around(4));
 
 
